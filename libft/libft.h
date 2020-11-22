@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 16:43:44 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/16 12:38:55 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/11/22 17:34:51 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,8 @@ int				ft_str_is_lowercase(char *str);
 int				ft_str_is_uppercase(char *str);
 int				ft_strequ(char *s1, char *s2);
 int				ft_isupper(int c);
+int			ft_assert(int actual, char *behavior);
+int			ft_assert_cmp(int actual, int expected, char *behavior);
+int			ft_assert_strcmp(char *actual, char *expected, char *behavior);
 
 #endif
