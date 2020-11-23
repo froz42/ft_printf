@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/20 14:36:22 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/22 19:17:19 by tmatis           ###   ########.fr       */
+/*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
+/*   Updated: 2020/11/23 18:42:52 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
 
-int		ft_printf(const char *format, ...)
+# define FT_PRINTF_H
+
+# include "../libft/libft.h"
+# include <stdarg.h>
+# define BUFFER_SIZE 2048
+
+typedef	struct	s_buffer
 {
-	ft_putstr_fd((char *)format, 1);
-	return (0);
-}
+	char	content[BUFFER_SIZE];
+	size_t	size;
+}				t_buffer;
+
+t_buffer	ft_buffinit(void);
+void		ft_buffflush(t_buffer *buffer);
+void		ft_buffcat(t_buffer *buffer, char *s2, size_t size);
+#endif

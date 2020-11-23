@@ -6,11 +6,11 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2020/11/21 18:03:37 by tmatis           ###   ########.fr        #
+#    Updated: 2020/11/23 18:37:00 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS_LIBFT	= ft_memcpy.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c\
+SRCS_LIBFT	= ft_assert.c ft_memcpy.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c\
 			  ft_strrchr.c ft_strlen.c ft_strlcpy.c ft_strnstr.c\
 			  ft_strncmp.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 			  ft_isprint.c ft_toupper.c ft_tolower.c ft_isdigit.c ft_memmove.c \
@@ -22,11 +22,13 @@ SRCS_LIBFT	= ft_memcpy.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c\
 			  ft_strcmp.c ft_islower.c ft_isupper.c ft_str_is_alpha.c ft_str_is_lowercase.c \
 			  ft_str_is_uppercase.c ft_strequ.c
 
-SRCS_PRINTF	= ft_printf.c
+SRCS_PRINTF	= ft_printf.c ft_buffutils.c
+
+SRCS_TESTS	= ft_test.c
 
 OBJS_LIBFT	= $(addprefix libft/, ${SRCS_LIBFT:.c=.o})
 OBJS_PRINTF = $(addprefix srcs/, ${SRCS_PRINTF:.c=.o})
-
+OBJS_TESTS = $(addprefix tests/, ${SRCS_TESTS:.c=.o})
 
 NAME		= libftprintf.a
 
@@ -39,11 +41,18 @@ $(NAME):	${OBJS_LIBFT} ${OBJS_PRINTF}
 all:		${NAME}
 
 clean:
-			rm -f ${OBJS_LIBFT} ${OBJS_PRINTF}
+			rm -f ${OBJS_LIBFT} ${OBJS_PRINTF} ${OBJS_TESTS} test
 
 fclean:		clean
 			rm -f ${NAME}
 
 re:			fclean all
 
-.PHONY:		all clean fclean re bonus
+test:		${NAME} ${OBJS_TESTS}
+			gcc -Wall -Wextra -Werror -fsanitize=address -fsanitize=undefined -o ./test ${OBJS_TESTS} -L. -lftprintf
+
+run_test:	test
+			clear
+			./test
+
+.PHONY:		all clean fclean re run_test
