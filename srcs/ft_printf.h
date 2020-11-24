@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/23 18:42:52 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/11/24 16:22:48 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,41 @@
 # include <stdarg.h>
 # define BUFFER_SIZE 2048
 
+typedef	enum	e_length
+{
+	def,
+	l,
+	ll,
+	h,
+	hh
+}				t_length;
+
+typedef	enum	e_bool
+{
+	false = 0,
+	true = 1
+}				t_bool;
+
 typedef	struct	s_buffer
 {
 	char	content[BUFFER_SIZE];
 	size_t	size;
 }				t_buffer;
 
-t_buffer	ft_buffinit(void);
-void		ft_buffflush(t_buffer *buffer);
-void		ft_buffcat(t_buffer *buffer, char *s2, size_t size);
+typedef	struct	s_syntax
+{
+	t_bool		align_left;
+	t_bool		plus;
+	t_bool		space;
+	t_bool		zero;
+	t_bool		hash;
+	int			width;
+	int			precision;
+	t_length	length;
+	char		conversion;
+}				t_syntax;
+
+t_buffer		ft_buffinit(void);
+void			ft_buffflush(t_buffer *buffer);
+void			ft_buffcat(t_buffer *buffer, char *s2, size_t size);
 #endif
