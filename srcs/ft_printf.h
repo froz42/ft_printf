@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/25 16:42:28 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/11/25 17:02:44 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef	struct	s_syntax
 	int			width;
 	int			precision;
 	t_length	length;
-	char		conversion;
+	int			type;
 }				t_syntax;
 
 t_buffer		ft_buffinit(void);
@@ -60,4 +60,6 @@ t_syntax		ft_syntaxinit(void);
 t_syntax		ft_parsewidth(char **format, t_syntax syntax , va_list va);
 t_syntax		ft_parseprecision(char **format, t_syntax syntax, va_list va);
 t_syntax		ft_parselength(char **format, t_syntax syntax);
+t_syntax		ft_parsetype(char **format, t_syntax syntax);
+t_syntax		ft_parsesyntax(char **format, va_list va)
 #endif
