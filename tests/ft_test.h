@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_test.c                                          :+:      :+:    :+:   */
+/*   ft_test.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/22 17:52:58 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/25 17:57:09 by tmatis           ###   ########.fr       */
+/*   Created: 2020/11/25 17:42:35 by tmatis            #+#    #+#             */
+/*   Updated: 2020/11/25 17:51:58 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_test.h"
+#ifndef FT_TEST_H
 
-int		main(void)
-{
-	ft_putstr_fd("---   [BEGIN TEST BUFFER]   ---\n\n", 1);
-	ft_test_buffer();
-	ft_putstr_fd("---   [BEGIN TEST SYNTAX]   ---\n\n", 1);
-	ft_test_syntax();
-}
+# define FT_TEST_H
+
+# include "../srcs/ft_printf.h"
+
+void	ft_test_syntax(void);
+void	ft_test_buffer(void);
+
+#endif

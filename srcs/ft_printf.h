@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/25 17:02:44 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/11/25 17:54:17 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ t_syntax		ft_parsewidth(char **format, t_syntax syntax , va_list va);
 t_syntax		ft_parseprecision(char **format, t_syntax syntax, va_list va);
 t_syntax		ft_parselength(char **format, t_syntax syntax);
 t_syntax		ft_parsetype(char **format, t_syntax syntax);
-t_syntax		ft_parsesyntax(char **format, va_list va)
+t_syntax		ft_parsesyntax(char **format, va_list va);
 #endif

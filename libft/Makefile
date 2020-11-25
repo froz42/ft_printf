@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2020/11/22 17:41:17 by tmatis           ###   ########.fr        #
+#    Updated: 2020/11/25 18:28:06 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS		= ft_memcpy.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c\
 			  ft_putnbr_fd.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c\
 			  ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_strnlen.c ft_strncpy.c\
 			  ft_strcmp.c ft_islower.c ft_isupper.c ft_str_is_alpha.c ft_str_is_lowercase.c \
-			  ft_str_is_uppercase.c ft_strequ.c ft_assert.c
+			  ft_str_is_uppercase.c ft_strequ.c ft_assert.c ft_christr.c
 
 OBJS		= ${SRCS:.c=.o}
 
