@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 17:52:58 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/23 18:47:30 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/11/24 17:31:18 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,22 @@ void	ft_testbuff(void)
 	ft_assert_cmp(buffer.size, 0, "We check that buffer size = 0");
 }
 
+void	ft_testsyntax(void)
+{
+	t_syntax	s;
+	char		*format = "#+worked";
+
+	s = ft_syntaxinit();
+	ft_assert_cmp(s.precision, -1, "We check that the precision is set to -1");
+	s = ft_parseflags(&format, s);
+	ft_assert_strcmp(format, "worked", "Check that the pointer is going after flag");
+	ft_assert_cmp(s.hash, true, "Check that hash is true");
+	ft_assert_cmp(s.plus, true, "Check that plus is true");
+	ft_assert_cmp(s.align_left, false, "Check that align_left is false");
+}
+
 int		main(void)
 {
 	ft_testbuff();
+	ft_testsyntax();
 }

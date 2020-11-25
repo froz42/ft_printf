@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 12:35:29 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/24 16:47:26 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/11/25 16:43:02 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,15 @@ t_syntax	ft_syntaxinit(void)
 	return (s);
 }
 
-			ft_parseflags(char *format, t_syntax t_flags)
+t_syntax	ft_parsesyntax(char **format, va_list va)
 {
-	const	char	*charset = "-+ 0#";
-	
+	t_syntax		syntax;
 
-
-}
-
-t_syntax	ft_parsesyntax(char *format, va_list va)
-{
-	t_syntax		s;
-
-	s = ft_syntaxinit();
+	syntax = ft_syntaxinit();
+	(*format)++;
+	syntax = ft_parseflags(format, syntax);
+	syntax = ft_parsewidth(format, syntax, va);
+	syntax = ft_parseprecision(format, syntax, va);
+	syntax = ft_parselength(format, syntax);
+	return (syntax);
 }
