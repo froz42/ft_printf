@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:19:36 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/25 18:55:36 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/11/25 21:46:52 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_syntax	ft_parseflags(char **format, t_syntax syntax)
 {
 	const	char	*charset = "-+ 0#";
 
-	while (ft_strchr(charset, **format))
+	while (ft_christr(charset, **format) != -1)
 	{
 		if (**format == '-')
 			syntax.align_left = true;
