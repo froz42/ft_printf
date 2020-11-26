@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 17:49:54 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/25 18:51:49 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/11/26 10:11:17 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,16 @@ void	ft_test_parsesyntax(void)
 	syntax = ft_parse_util("%llc");
 	ft_assert_cmp(syntax.length, ll, "Should be ll");
 	ft_assert_cmp(syntax.type, 0, "Should be c so index 0");
+	syntax = ft_parse_util("%#+*.*llp", 10, 15);
+	ft_assert_cmp(syntax.hash, true, "check if hash is detected");
+	ft_assert_cmp(syntax.plus, true, "check if plus is detected");
+	ft_assert_cmp(syntax.width, 10, "check if width is detected");
+	ft_assert_cmp(syntax.precision, 15, "check if precision is detected");
+	syntax = ft_parse_util("%15.10lp");
+	ft_assert_cmp(syntax.width, 15, "check if width is detected");
+	ft_assert_cmp(syntax.precision, 10, "check if precision is detected");
+	ft_assert_cmp(syntax.length, l, "Should be l");
+	ft_assert_cmp(syntax.type, 2, "Should be p");
 }
 
 void	ft_test_syntax(void)
