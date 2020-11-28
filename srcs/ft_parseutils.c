@@ -6,13 +6,13 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:19:36 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/25 21:46:52 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/11/26 19:44:11 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_syntax	ft_parseflags(char **format, t_syntax syntax)
+t_syntax	ft_parseflags(const char **format, t_syntax syntax)
 {
 	const	char	*charset = "-+ 0#";
 
@@ -33,7 +33,7 @@ t_syntax	ft_parseflags(char **format, t_syntax syntax)
 	return (syntax);
 }
 
-t_syntax	ft_parsewidth(char **format, t_syntax syntax , va_list va)
+t_syntax	ft_parsewidth(const char **format, t_syntax syntax, va_list va)
 {
 	int		width;
 
@@ -55,7 +55,7 @@ t_syntax	ft_parsewidth(char **format, t_syntax syntax , va_list va)
 	return (syntax);
 }
 
-t_syntax	ft_parseprecision(char **format, t_syntax syntax, va_list va)
+t_syntax	ft_parseprecision(const char **format, t_syntax syntax, va_list va)
 {
 	int	precision;
 
@@ -74,13 +74,13 @@ t_syntax	ft_parseprecision(char **format, t_syntax syntax, va_list va)
 		{
 			while (**format && ft_isdigit(**format))
 				precision = precision * 10 + (*(*format)++ - 48);
-		syntax.precision = precision;
+			syntax.precision = precision;
 		}
 	}
 	return (syntax);
 }
 
-t_syntax	ft_parselength(char **format, t_syntax syntax)
+t_syntax	ft_parselength(const char **format, t_syntax syntax)
 {
 	if (ft_strncmp(*format, "ll", 2) == 0)
 	{
@@ -105,12 +105,12 @@ t_syntax	ft_parselength(char **format, t_syntax syntax)
 	return (syntax);
 }
 
-t_syntax	ft_parsetype(char **format, t_syntax syntax)
+t_syntax	ft_parsetype(const char **format, t_syntax syntax)
 {
 	const	char	*charset = "cspdiuxX%nfge";
 
 	syntax.type = ft_christr(charset, **format);
-	if (**format)
+	if (**format && syntax.type != -1)
 		(*format)++;
 	return (syntax);
 }

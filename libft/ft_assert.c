@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 18:18:17 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/22 17:34:08 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/11/26 18:54:52 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int			ft_assert(int actual, char *behavior)
 {
 	ft_putstr_fd("\033[0mTEST:", 1);
 	if (actual)
-		ft_putstr_fd("\033[1;32m [OK]	", 1);
+		ft_putstr_fd("\033[1;32m [✓]	", 1);
 	else
-		ft_putstr_fd("\033[1;31m [KO]	", 1);
+		ft_putstr_fd("\033[1;31m [⨯]	", 1);
 	ft_putstr_fd("\033[0m", 1);
 	if (behavior)
 		ft_putstr_fd(behavior, 1);
@@ -30,9 +30,9 @@ int			ft_assert_cmp(int actual, int expected, char *behavior)
 {
 	ft_putstr_fd("\033[0mTEST:", 1);
 	if (actual == expected)
-		ft_putstr_fd("\033[1;32m [OK]", 1);
+		ft_putstr_fd("\033[1;32m [✓]", 1);
 	else
-		ft_putstr_fd("\033[1;31m [KO]", 1);
+		ft_putstr_fd("\033[1;31m [⨯]", 1);
 	ft_putstr_fd("\033[0;33m\033[3m	actual: \033[4m", 1);
 	ft_putnbr_fd(actual, 1);
 	ft_putstr_fd("\033[0m\033[0;33m\033[3m, expected: \033[4m", 1);
@@ -69,14 +69,14 @@ int			ft_assert_strcmp(char *actual, char *expected, char *behavior)
 		i++;
 	if (actual[i] == expected[i])
 	{
-		ft_putstr_fd("\033[1;32m [OK]	\033[0;33m\033[3m\"", 1);
+		ft_putstr_fd("\033[1;32m [✓]	\033[0;33m\033[3m\"", 1);
 		ft_putstr_fd(actual, 1);
 		ft_putstr_fd("\" == \"", 1);
 		ft_putstr_fd(expected, 1);
 	}
 	else
 	{
-		ft_putstr_fd("\033[1;31m [KO]	\033[0;33m\033[3m\"", 1);
+		ft_putstr_fd("\033[1;31m [⨯]	\033[0;33m\033[3m\"", 1);
 		ft_putstrun(actual, i);
 		ft_putstr_fd("\" != \"", 1);
 		ft_putstrun(expected, i);

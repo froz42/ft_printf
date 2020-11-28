@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/25 17:54:17 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/11/28 15:53:55 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,16 @@ typedef	struct	s_syntax
 
 t_buffer		ft_buffinit(void);
 void			ft_buffflush(t_buffer *buffer);
-void			ft_buffcat(t_buffer *buffer, char *s2, size_t size);
-t_syntax		ft_parseflags(char **format, t_syntax syntax);
+void			ft_buffcat(t_buffer *buffer, const char *s2, size_t size);
+t_syntax		ft_parseflags(const char **format, t_syntax syntax);
 t_syntax		ft_syntaxinit(void);
-t_syntax		ft_parsewidth(char **format, t_syntax syntax , va_list va);
-t_syntax		ft_parseprecision(char **format, t_syntax syntax, va_list va);
-t_syntax		ft_parselength(char **format, t_syntax syntax);
-t_syntax		ft_parsetype(char **format, t_syntax syntax);
-t_syntax		ft_parsesyntax(char **format, va_list va);
+t_syntax		ft_parsewidth(const char **format, t_syntax syntax, va_list va);
+t_syntax		ft_parseprecision(const char **format, t_syntax syntax, va_list va);
+t_syntax		ft_parselength(const char **format, t_syntax syntax);
+t_syntax		ft_parsetype(const char **format, t_syntax syntax);
+t_syntax		ft_parsesyntax(const char **format, va_list va);
+int				ft_def_conversion(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_char_def(t_syntax syntax, t_buffer *buffer, va_list va);
+void			ft_buff_fill(t_buffer *buffer, int c, int size);
+int				ft_printf(const char *format, ...);
 #endif
