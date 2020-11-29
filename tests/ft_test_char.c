@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_test.h                                          :+:      :+:    :+:   */
+/*   ft_test_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 17:42:35 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/28 17:15:16 by tmatis           ###   ########.fr       */
+/*   Created: 2020/11/28 16:59:31 by tmatis            #+#    #+#             */
+/*   Updated: 2020/11/28 17:57:33 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_TEST_H
+#include "ft_test.h"
 
-# define FT_TEST_H
+void	ft_test_char(void)
+{
+	int			result;
+	t_buffer	buffer;
 
-# include "../srcs/ft_printf.h"
-
-void	ft_test_syntax(void);
-void	ft_test_buffer(void);
-void	ft_test_char(void);
-int		ft_printf_no_flush(const char *format, t_buffer *buffer, ...);
-void	ft_flush_nowrite(t_buffer *buffer);
-int		ft_doconversion(t_syntax syntax, t_buffer *buffer, va_list va);
-
-#endif
+	buffer = ft_buffinit();
+	result = ft_printf_no_flush("%cello%-5c%5c%c", &buffer, 'h', 100, 'h','\0');
+	ft_assert_strcmp(buffer.content, "hellod        h",
+			"Test if char insert work");
+	ft_assert_cmp(result, 16, "should return 16");
+	ft_flush_nowrite(&buffer);
+}

@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2020/11/28 16:36:35 by tmatis           ###   ########.fr        #
+#    Updated: 2020/11/28 17:56:58 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,10 @@ SRCS_LIBFT	= ft_assert.c ft_memcpy.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_str
 			  ft_strcmp.c ft_islower.c ft_isupper.c ft_str_is_alpha.c ft_str_is_lowercase.c \
 			  ft_str_is_uppercase.c ft_strequ.c ft_christr.c ft_strcpy.c
 
-SRCS_PRINTF	= ft_printf.c ft_buffutils.c ft_parsesyntax.c ft_parseutils.c ft_char_conversion.c ft_lengths.c
+SRCS_PRINTF	= ft_printf.c ft_buffutils.c ft_parsesyntax.c ft_parseutils.c\
+			  ft_char_conversion.c ft_lengths.c
 
-SRCS_TESTS	= ft_test.c ft_test_buffer.c ft_test_syntax.c
+SRCS_TESTS	= ft_test.c ft_test_syntax.c ft_test_buffer.c ft_test_char.c
 
 OBJS_LIBFT	= $(addprefix libft/, ${SRCS_LIBFT:.c=.o})
 OBJS_PRINTF = $(addprefix srcs/, ${SRCS_PRINTF:.c=.o})
