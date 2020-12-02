@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 15:06:57 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/28 16:53:20 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/03 00:06:42 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,34 @@
 
 int		ft_char_def(t_syntax syntax, t_buffer *buffer, va_list va)
 {
-	const	char pretends[2] = " 0";
+	const	char	pretends[2] = " 0";
 
 	if (!syntax.align_left && syntax.width)
 		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width-1);
 	ft_buff_fill(buffer, (unsigned char)va_arg(va, int), 1);
 	if (syntax.align_left && syntax.width)
-		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width-1);
+		ft_buff_fill(buffer, ' ', syntax.width-1);
 	if (syntax.width)
 		return (syntax.width);
 	else
 		return (1);
+}
+
+int		ft_char_l(t_syntax syntax, t_buffer *buffer, va_list va)
+{
+	const	char	pretends[2] = " 0";
+	int				len;
+	char			buffer_utf8[4];
+
+	if (!syntax.align_left && syntax.width)
+		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width-1);
+	len = ft_utf8_encode(va_arg(va, int), buffer_utf8);
+	ft_buffcat(buffer, buffer_utf8, len);
+	if (syntax.align_left && syntax.width)
+		ft_buff_fill(buffer, ' ', syntax.width-1);
+	if (syntax.width)
+		return (syntax.width);
+	else
+		return (1);
+
 }

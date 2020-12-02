@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/28 15:53:55 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/02 22:49:12 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,9 @@ t_syntax		ft_parselength(const char **format, t_syntax syntax);
 t_syntax		ft_parsetype(const char **format, t_syntax syntax);
 t_syntax		ft_parsesyntax(const char **format, va_list va);
 int				ft_def_conversion(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_l_conversion(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_char_def(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_char_l(t_syntax syntax, t_buffer *buffer, va_list va);
 void			ft_buff_fill(t_buffer *buffer, int c, int size);
 int				ft_printf(const char *format, ...);
 #endif

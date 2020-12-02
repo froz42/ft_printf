@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 19:20:27 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/02 19:53:58 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/02 23:02:20 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_utf8_encode(int c, char *buff)
 		buff[i++] = c;
 	else if (c < 0x0800)
 	{
-		buff[i++] = ((c >> 6) & 0x1F) | 0x80;
+		buff[i++] = ((c >> 6) & 0x1F) | 0xC0;
 		buff[i++] = ((c >> 0) & 0x3F) | 0x80;
 	}
 	else if (c < 0x010000)
