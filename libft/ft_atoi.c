@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 18:13:16 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/18 15:27:48 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/02 20:15:58 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_atoi(const char *str)
 {
-	int				sign;
-	unsigned	int	n;
+	int						sign;
+	int	unsigned			n;
 
 	sign = 1;
 	n = 0;
