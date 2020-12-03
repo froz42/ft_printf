@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 16:43:44 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/02 19:29:28 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/03 20:57:23 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,8 @@ int				ft_assert_cmp(int actual, int expected, char *behavior);
 int				ft_assert_strcmp(char *actual, char *expected, char *behavior);
 int				ft_christr(const char *str, int c);
 int				ft_utf8_encode(int c, char *buff);
+size_t			ft_wstrlen(int *wstr);
+void			ft_putwstr_fd(int *wstr, int fd);
+size_t			ft_wstrtostr(char *dest, int *wsrc);
+size_t			ft_wstrnlen(const int *s, size_t maxlen);
 #endif

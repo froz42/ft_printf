@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:19:36 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/03 00:08:21 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/03 19:46:09 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_syntax	ft_parseprecision(const char **format, t_syntax syntax, va_list va)
 		{
 			(*format)++;
 			precision = va_arg(va, int);
-			if (precision > 0)
+			if (precision >= 0)
 				syntax.precision = precision;
 		}
 		else
