@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 15:06:57 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/03 00:06:42 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/04 12:39:49 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ int		ft_char_l(t_syntax syntax, t_buffer *buffer, va_list va)
 	int				len;
 	char			buffer_utf8[4];
 
-	if (!syntax.align_left && syntax.width)
-		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width-1);
 	len = ft_utf8_encode(va_arg(va, int), buffer_utf8);
+	if (!syntax.align_left && syntax.width)
+		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width-len);
 	ft_buffcat(buffer, buffer_utf8, len);
 	if (syntax.align_left && syntax.width)
-		ft_buff_fill(buffer, ' ', syntax.width-1);
+		ft_buff_fill(buffer, ' ', syntax.width-len);
 	if (syntax.width)
 		return (syntax.width);
 	else

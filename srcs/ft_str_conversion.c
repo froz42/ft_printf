@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 13:16:03 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/03 19:42:11 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/04 15:56:59 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,63 @@ int		ft_str_def(t_syntax syntax, t_buffer *buffer, va_list va)
 	if (!syntax.align_left && syntax.width)
 		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width-strlen);
 	ft_buffcat(buffer, str, strlen);
+	if (syntax.align_left && syntax.width)
+		ft_buff_fill(buffer, ' ', syntax.width-strlen);
+	if (syntax.width && syntax.width > strlen)
+		return (syntax.width);
+	else
+		return (strlen);
+}
+
+static	int		ft_wstrlenp(const int *wstr, int precision)
+{
+	char	buff[4];
+	int		strlen;
+	int		buffed;
+
+	strlen = 0;
+	while (*wstr)
+	{
+		buffed = ft_utf8_encode(*wstr++, buff);
+		if (precision != -1 && (strlen + buffed) > precision)
+			return (strlen);
+		strlen += buffed;
+	}
+	return (strlen);
+
+}
+
+static	void		ft_buffwcat(t_buffer *buffer, const int *wstr, int precision)
+{
+	char	buff[4];
+	int		buffed;
+	int		strlen;
+
+	strlen = 0;
+	while (*wstr)
+	{
+		buffed = ft_utf8_encode(*wstr++, buff);
+		if (precision != -1 && (strlen + buffed) > precision)
+			return ;
+		strlen += buffed;
+		if (&buffer->content[buffer->size+buffed] >= &buffer->content[BUFFER_SIZE])
+			ft_buffflush(buffer);
+		ft_buffcat(buffer, buff, buffed);
+	}
+}
+int		ft_str_l(t_syntax syntax, t_buffer *buffer, va_list va)
+{
+	const	char	pretends[2] = " 0";
+	const	int		*nullstr	= L"(null)";
+	const	int		*wstr = va_arg(va, int *);
+	int				strlen;
+
+	if (!wstr)
+		wstr = nullstr;
+	strlen = ft_wstrlenp(wstr, syntax.precision);
+	if (!syntax.align_left && syntax.width)
+		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width-strlen);
+	ft_buffwcat(buffer, wstr, syntax.precision);
 	if (syntax.align_left && syntax.width)
 		ft_buff_fill(buffer, ' ', syntax.width-strlen);
 	if (syntax.width && syntax.width > strlen)

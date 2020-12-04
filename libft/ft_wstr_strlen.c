@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_test.h                                          :+:      :+:    :+:   */
+/*   ft_wstr_strlen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 17:42:35 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/03 22:13:51 by tmatis           ###   ########.fr       */
+/*   Created: 2020/12/04 14:23:21 by tmatis            #+#    #+#             */
+/*   Updated: 2020/12/04 14:28:56 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_TEST_H
+#include "libft.h"
 
-# define FT_TEST_H
+int		ft_wstr_strlen(int *wstr)
+{
+	char	buff[4];
+	int		strlen;
+	int		buffed;
 
-# include "../srcs/ft_printf.h"
-
-void	ft_test_syntax(void);
-void	ft_test_buffer(void);
-void	ft_test_char(void);
-int		ft_printf_no_flush(const char *format, t_buffer *buffer, ...);
-void	ft_flush_nowrite(t_buffer *buffer);
-int		ft_doconversion(t_syntax syntax, t_buffer *buffer, va_list va);
-void	ft_test_str(void);
-
-#endif
+	strlen = 0;
+	while (*wstr)
+	{
+		buffed = ft_utf8_encode(*wstr++, buff);
+		strlen += buffed;
+	}
+	return (strlen);
+}

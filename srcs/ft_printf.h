@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/03 17:26:43 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/04 15:22:05 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int				ft_l_conversion(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_char_def(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_char_l(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_str_def(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_str_l(t_syntax syntax, t_buffer *buffer, va_list va);
 void			ft_buff_fill(t_buffer *buffer, int c, int size);
 int				ft_printf(const char *format, ...);
 #endif

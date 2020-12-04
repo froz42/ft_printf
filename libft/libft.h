@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 16:43:44 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/03 20:57:23 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/04 14:25:27 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,9 @@ int				ft_utf8_encode(int c, char *buff);
 size_t			ft_wstrlen(int *wstr);
 void			ft_putwstr_fd(int *wstr, int fd);
 size_t			ft_wstrtostr(char *dest, int *wsrc);
+char			*ft_wstrtostr_malloc(int *wsrc);
 size_t			ft_wstrnlen(const int *s, size_t maxlen);
+void			*ft_realloc(void *src, size_t size, size_t addbyte);
+int				ft_wstr_strlen(int *wstr);
+
 #endif

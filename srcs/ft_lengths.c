@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:52:43 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/03 17:26:53 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/03 22:49:24 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int			ft_l_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
 	int	((*conv[13])(t_syntax syntax, t_buffer *buffer, va_list va));
 
 	conv[0] = &ft_char_l;
+	conv[1] = &ft_str_l;
 	return (conv[syntax.type](syntax, buffer, va));
 }

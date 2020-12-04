@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 16:59:31 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/02 23:37:20 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/04 12:44:51 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	ft_test_char(void)
 			"Test if char insert work");
 	ft_assert_cmp(result, 16, "should return 16");
 	ft_flush_nowrite(&buffer);
-	ft_printf_no_flush("%lc%c", &buffer, 233, 0);
+	ft_printf_no_flush("%3lc%c", &buffer, 233, 0);
 	ft_flush_nowrite(&buffer);
-	ft_assert_strcmp(buffer.content, "é", "should be 233");
+	ft_assert_strcmp(buffer.content, " é", "should be 233");
 	ft_printf_no_flush("%lc%lc", &buffer, 0x1F378, 0);
 	ft_assert_strcmp(buffer.content, "🍸", "should be drink");
 	ft_flush_nowrite(&buffer);
