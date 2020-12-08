@@ -6,11 +6,12 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 17:52:58 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/03 22:13:35 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/08 18:40:57 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_test.h"
+#include <stdio.h>
 
 int		ft_printf_no_flush(const char *format, t_buffer *buffer, ...)
 {
@@ -61,4 +62,7 @@ int		main(void)
 	ft_test_char();
 	ft_putstr_fd("---   [BEGIN  STRS TESTS]   ---\n\n", 1);
 	ft_test_str();
+	ft_putstr_fd("---   [BEGIN  INTS TESTS]   ---\n\n", 1);
+	ft_test_int();
+	ft_printf("--- MANUAL TEST ---\n");
 }

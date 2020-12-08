@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/04 15:22:05 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/08 23:47:14 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,30 @@ void			ft_buffcat(t_buffer *buffer, const char *s2, size_t size);
 t_syntax		ft_parseflags(const char **format, t_syntax syntax);
 t_syntax		ft_syntaxinit(void);
 t_syntax		ft_parsewidth(const char **format, t_syntax syntax, va_list va);
-t_syntax		ft_parseprecision(const char **format, t_syntax syntax, va_list va);
+t_syntax		ft_parseprecision(const char **format, t_syntax syntax,
+		va_list va);
 t_syntax		ft_parselength(const char **format, t_syntax syntax);
 t_syntax		ft_parsetype(const char **format, t_syntax syntax);
 t_syntax		ft_parsesyntax(const char **format, va_list va);
-int				ft_def_conversion(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_def_conversion(t_syntax syntax, t_buffer *buffer,
+		va_list va);
 int				ft_l_conversion(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_ll_conversion(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_h_conversion(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_hh_conversion(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_char_def(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_char_l(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_str_def(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_str_l(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_int_conv(t_syntax syntax, t_buffer *buffer, long long i);
+int				ft_int_def(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_int_hh(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_int_h(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_int_l(t_syntax syntax, t_buffer *buffer, va_list va);
 void			ft_buff_fill(t_buffer *buffer, int c, int size);
+int				ft_buffnbr_signed(long long si, char *base, t_syntax s, char *buff);
+int				ft_buffnbr_unsigned(unsigned long long i, char *base, int pre,
+		char *buff);
 int				ft_printf(const char *format, ...);
+t_bool			ft_issign(char c);
 #endif

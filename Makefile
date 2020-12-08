@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2020/12/04 16:01:46 by tmatis           ###   ########.fr        #
+#    Updated: 2020/12/08 23:47:25 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,14 @@ SRCS_LIBFT	= ft_memcpy.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c\
 			  ft_strcmp.c ft_islower.c ft_isupper.c ft_str_is_alpha.c ft_str_is_lowercase.c \
 			  ft_str_is_uppercase.c ft_strequ.c ft_assert.c ft_christr.c ft_utf8_encode.c\
 			  ft_putwstr_fd.c ft_wstrlen.c ft_wstrnlen.c ft_wstrtostr.c ft_realloc.c\
-			  ft_wstr_strlen.c
+			  ft_wstr_strlen.c ft_strcpy.c 
 
 SRCS_PRINTF	= ft_printf.c ft_buffutils.c ft_parsesyntax.c ft_parseutils.c\
-			  ft_char_conversion.c ft_lengths.c ft_str_conversion.c
+			  ft_char_conversion.c ft_lengths.c ft_str_conversion.c\
+			  ft_int_conversion.c ft_nbrutils.c ft_conversion.c
 
-SRCS_TESTS	= ft_test.c ft_test_syntax.c ft_test_buffer.c ft_test_char.c ft_test_str.c
+SRCS_TESTS	= ft_test.c ft_test_syntax.c ft_test_buffer.c ft_test_char.c ft_test_str.c\
+			  ft_test_int.c
 
 OBJS_LIBFT	= $(addprefix libft/, ${SRCS_LIBFT:.c=.o})
 OBJS_PRINTF = $(addprefix srcs/, ${SRCS_PRINTF:.c=.o})
@@ -59,7 +61,7 @@ re:			fclean all
 
 test:		${NAME} ${OBJS_TESTS}
 			@echo Compiling tests with -fsanitize=address -fsanitize=undefined
-			@gcc -Wall -Wextra -Werror -fsanitize=address -fsanitize=undefined -o ./test ${OBJS_TESTS} -L. -lftprintf
+			@gcc -Wall -Wextra -Werror -o ./test ${OBJS_TESTS} -L. -lftprintf
 
 run_test:	test
 			@echo Running tests in 2s
