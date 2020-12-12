@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 17:52:58 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/08 18:40:57 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/12 14:37:55 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,5 @@ int		main(void)
 	ft_putstr_fd("---   [BEGIN  INTS TESTS]   ---\n\n", 1);
 	ft_test_int();
 	ft_printf("--- MANUAL TEST ---\n");
+	ft_printf("|%0*.*p|\n", 15, -6, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 15:06:57 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/04 12:39:49 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/12 14:48:53 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,22 @@ int		ft_char_l(t_syntax syntax, t_buffer *buffer, va_list va)
 	ft_buffcat(buffer, buffer_utf8, len);
 	if (syntax.align_left && syntax.width)
 		ft_buff_fill(buffer, ' ', syntax.width-len);
+	if (syntax.width)
+		return (syntax.width);
+	else
+		return (1);
+}
+
+int		ft_prc_def(t_syntax syntax, t_buffer *buffer, va_list va)
+{
+	const	char	pretends[2] = " 0";
+
+	(void)va;
+	if (!syntax.align_left && syntax.width)
+		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width-1);
+	ft_buff_fill(buffer, '%', 1);
+	if (syntax.align_left && syntax.width)
+		ft_buff_fill(buffer, ' ', syntax.width-1);
 	if (syntax.width)
 		return (syntax.width);
 	else

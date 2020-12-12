@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 14:36:22 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/08 23:22:06 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/09 17:36:25 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 int		ft_doconversion(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	int		result;
-	
+
 	result = 0;
+	if (syntax.type == -1)
+		return (-1);
 	if (syntax.length == def)
 		result = ft_def_conversion(syntax, buffer, va);
 	else if (syntax.length == l)
