@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/13 18:53:27 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/13 19:37:12 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 # define FT_PRINTF_H
 
-# include "../libft/libft.h"
+# include "./libft/libft.h"
 # include <stdarg.h>
 # define BUFFER_SIZE 2048
 
