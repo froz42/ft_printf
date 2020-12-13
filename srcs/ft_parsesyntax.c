@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 12:35:29 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/26 19:43:23 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/13 18:02:19 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_syntax	ft_syntaxinit(void)
 	s.precision = -1;
 	s.length = def;
 	s.type = -1;
+	s.count = 0;
 	return (s);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 16:23:32 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/10 16:57:58 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/13 16:53:44 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		ft_uhex_ll(t_syntax syntax, t_buffer *buffer, va_list va)
 	return (ft_uhex_conv(syntax, buffer,
 				va_arg(va, unsigned long long), syntax.type == 7));
 }
+
 int		ft_uhex_l(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	return (ft_uhex_conv(syntax, buffer,
@@ -40,4 +41,3 @@ int		ft_uhex_h(t_syntax syntax, t_buffer *buffer, va_list va)
 	return (ft_uhex_conv(syntax, buffer,
 				(unsigned short)va_arg(va, int), syntax.type == 7));
 }
-

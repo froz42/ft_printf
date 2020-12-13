@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 16:59:31 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/04 12:44:51 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/13 16:56:44 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ft_test_char(void)
 	t_buffer	buffer;
 
 	buffer = ft_buffinit();
-	result = ft_printf_no_flush("%cello%-5c%5c%c", &buffer, 'h', 100, 'h','\0');
+	result = ft_printf_no_flush("%cello%-5c%5c%c", &buffer, 'h', 100, 'h',
+			'\0');
 	ft_assert_strcmp(buffer.content, "hellod        h",
 			"Test if char insert work");
 	ft_assert_cmp(result, 16, "should return 16");

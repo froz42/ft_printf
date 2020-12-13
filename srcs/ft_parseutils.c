@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:19:36 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/12 14:59:19 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/13 16:39:36 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ t_syntax	ft_parselength(const char **format, t_syntax syntax)
 
 t_syntax	ft_parsetype(const char **format, t_syntax syntax)
 {
-	const	char	*charset = "cspdiuxX%";
+	const	char	*charset = "cspdiuxX%n";
 
 	syntax.type = ft_christr(charset, **format);
 	if (**format && syntax.type != -1)

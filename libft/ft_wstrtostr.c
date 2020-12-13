@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 20:51:21 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/04 12:36:04 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/13 16:55:40 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 size_t	ft_wstrtostr(char *dest, int *wsrc)
 {
 	char	buff[4];
-	size_t  i;
+	size_t	i;
 	size_t	len;
 	int		buffed;
 
@@ -35,7 +35,7 @@ size_t	ft_wstrtostr(char *dest, int *wsrc)
 char	*ft_wstrtostr_malloc(int *wsrc)
 {
 	char	buff[4];
-	size_t  i;
+	size_t	i;
 	size_t	len;
 	int		buffed;
 	char	*dest;
@@ -53,4 +53,3 @@ char	*ft_wstrtostr_malloc(int *wsrc)
 	dest[len++] = '\0';
 	return (dest);
 }
-

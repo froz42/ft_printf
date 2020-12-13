@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2020/12/10 17:09:26 by tmatis           ###   ########.fr        #
+#    Updated: 2020/12/13 17:54:52 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRCS_LIBFT	= ft_memcpy.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c\
 SRCS_PRINTF	= ft_printf.c ft_buffutils.c ft_parsesyntax.c ft_parseutils.c\
 			  ft_char_conversion.c ft_lengths.c ft_str_conversion.c\
 			  ft_int_conversion.c ft_nbrutils.c ft_conversion.c\
-			  ft_uint_conversion.c ft_uhex_conversion.c ft_ptr_conversion.c
+			  ft_uint_conversion.c ft_uhex_conversion.c ft_ptr_conversion.c\
+			  ft_n_conversion.c
 
 SRCS_TESTS	= ft_test.c ft_test_syntax.c ft_test_buffer.c ft_test_char.c ft_test_str.c\
 			  ft_test_int.c
@@ -70,6 +71,7 @@ run_test:	test
 			@./test
 
 norminette: 
-			${NORMINETTE_PATH} $(addprefix srcs/,${SRCS_PRINTF}) $(addprefix tests/,${SRCS_TESTS})
+			${NORMINETTE_PATH} $(addprefix srcs/,${SRCS_PRINTF}) $(addprefix tests/,${SRCS_TESTS}) $(addprefix libft/,${SRCS_LIBFT})
+
 
 .PHONY:		all clean fclean re run_test norminette

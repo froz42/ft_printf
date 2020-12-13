@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 12:09:06 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/04 12:16:41 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/13 16:56:04 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	*ft_realloc(void *src, size_t size, size_t addbyte)
 	cdest = (char *)malloc((size + addbyte) * sizeof(char));
 	ft_memcpy(cdest, csrc, size);
 	free(src);
-	return ((void *) cdest);
+	return ((void *)cdest);
 }

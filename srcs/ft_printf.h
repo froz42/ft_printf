@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/12 14:49:30 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/13 17:54:38 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef	struct	s_syntax
 	int			precision;
 	t_length	length;
 	int			type;
+	int			count;
 }				t_syntax;
 
 t_buffer		ft_buffinit(void);
@@ -95,6 +96,11 @@ int				ft_uhex_h(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_uhex_hh(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_ptr_def(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_prc_def(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_n_def(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_n_hh(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_n_h(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_n_ll(t_syntax syntax, t_buffer *buffer, va_list va);
+int				ft_n_l(t_syntax syntax, t_buffer *buffer, va_list va);
 void			ft_buff_fill(t_buffer *buffer, int c, int size);
 int				ft_buffnbr_signed(long long si, char *base, t_syntax s, char *buff);
 int				ft_buffnbr_unsigned(unsigned long long si, char *base, t_syntax s, char *buff);

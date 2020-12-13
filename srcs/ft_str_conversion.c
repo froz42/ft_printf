@@ -6,16 +6,16 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 13:16:03 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/04 15:56:59 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/13 16:49:07 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_str_def(t_syntax syntax, t_buffer *buffer, va_list va)
+int					ft_str_def(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	const	char	pretends[2] = " 0";
-	const	char	*nullstr	= "(null)";
+	const	char	*nullstr = "(null)";
 	char			*str;
 	int				strlen;
 
@@ -27,17 +27,17 @@ int		ft_str_def(t_syntax syntax, t_buffer *buffer, va_list va)
 	else
 		strlen = ft_strlen(str);
 	if (!syntax.align_left && syntax.width)
-		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width-strlen);
+		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width - strlen);
 	ft_buffcat(buffer, str, strlen);
 	if (syntax.align_left && syntax.width)
-		ft_buff_fill(buffer, ' ', syntax.width-strlen);
+		ft_buff_fill(buffer, ' ', syntax.width - strlen);
 	if (syntax.width && syntax.width > strlen)
 		return (syntax.width);
 	else
 		return (strlen);
 }
 
-static	int		ft_wstrlenp(const int *wstr, int precision)
+static	int			ft_wstrlenp(const int *wstr, int precision)
 {
 	char	buff[4];
 	int		strlen;
@@ -52,10 +52,10 @@ static	int		ft_wstrlenp(const int *wstr, int precision)
 		strlen += buffed;
 	}
 	return (strlen);
-
 }
 
-static	void		ft_buffwcat(t_buffer *buffer, const int *wstr, int precision)
+static	void		ft_buffwcat(t_buffer *buffer, const int *wstr,
+		int precision)
 {
 	char	buff[4];
 	int		buffed;
@@ -68,15 +68,17 @@ static	void		ft_buffwcat(t_buffer *buffer, const int *wstr, int precision)
 		if (precision != -1 && (strlen + buffed) > precision)
 			return ;
 		strlen += buffed;
-		if (&buffer->content[buffer->size+buffed] >= &buffer->content[BUFFER_SIZE])
+		if (&buffer->content[buffer->size + buffed] >=
+				&buffer->content[BUFFER_SIZE])
 			ft_buffflush(buffer);
 		ft_buffcat(buffer, buff, buffed);
 	}
 }
-int		ft_str_l(t_syntax syntax, t_buffer *buffer, va_list va)
+
+int					ft_str_l(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	const	char	pretends[2] = " 0";
-	const	int		*nullstr	= L"(null)";
+	const	int		*nullstr = L"(null)";
 	const	int		*wstr = va_arg(va, int *);
 	int				strlen;
 
@@ -84,10 +86,10 @@ int		ft_str_l(t_syntax syntax, t_buffer *buffer, va_list va)
 		wstr = nullstr;
 	strlen = ft_wstrlenp(wstr, syntax.precision);
 	if (!syntax.align_left && syntax.width)
-		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width-strlen);
+		ft_buff_fill(buffer, pretends[syntax.zero], syntax.width - strlen);
 	ft_buffwcat(buffer, wstr, syntax.precision);
 	if (syntax.align_left && syntax.width)
-		ft_buff_fill(buffer, ' ', syntax.width-strlen);
+		ft_buff_fill(buffer, ' ', syntax.width - strlen);
 	if (syntax.width && syntax.width > strlen)
 		return (syntax.width);
 	else

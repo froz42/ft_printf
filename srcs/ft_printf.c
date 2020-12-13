@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 14:36:22 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/09 17:36:25 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/13 17:37:13 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,23 @@ int		ft_printf(const char *format, ...)
 	t_buffer	buffer;
 	va_list		va;
 	int			count;
+	t_syntax	syntax;
 
 	va_start(va, format);
 	count = 0;
-	buffer = ft_buffinit(); 
+	buffer = ft_buffinit();
 	while (*format)
 	{
 		if (*format == '%')
-			count += ft_doconversion(ft_parsesyntax(&format, va), &buffer, va);
+		{
+			syntax = ft_parsesyntax(&format, va);
+			syntax.count = count;
+			count += ft_doconversion(syntax, &buffer, va);
+		}
 		else
 		{
-			ft_buffcat(&buffer, format, 1);
+			ft_buffcat(&buffer, format++, 1);
 			count++;
-			format++;
 		}
 	}
 	va_end(va);
