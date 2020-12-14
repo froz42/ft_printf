@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2020/12/13 19:16:42 by tmatis           ###   ########.fr        #
+#    Updated: 2020/12/14 01:10:13 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,8 @@ fclean:		clean
 
 re:			fclean all
 
+bonus:		all
+
 test:		${NAME} ${OBJS_TESTS}
 			@echo "\033[0;36m"Compiling tests with "\033[0;33m"-fsanitize=address -fsanitize=undefined"\033[0m"
 			@gcc -Wall -Wextra -Werror -fsanitize=address -fsanitize=undefined -o ./test ${OBJS_TESTS} -L. -lftprintf
@@ -70,7 +72,6 @@ run_test:	test
 			@sleep 2
 			@./test
 			@echo "\033[0;32mEverything ok ?\033[0m"
-
 
 norminette:
 			@echo "\033[0;36m------------ NORMINETTE ------------"
