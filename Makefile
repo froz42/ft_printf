@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2020/12/14 01:10:13 by tmatis           ###   ########.fr        #
+#    Updated: 2020/12/14 17:22:10 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,4 +79,4 @@ norminette:
 			@echo "-----------------------------------\033[0m"
 
 
-.PHONY:		all clean fclean re run_test norminette
+.PHONY:		all clean fclean re run_test norminette bonus
