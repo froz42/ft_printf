@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/13 18:53:27 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/15 10:51:40 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int				ft_n_l(t_syntax syntax, t_buffer *buffer, va_list va);
 void			ft_buff_fill(t_buffer *buffer, int c, int size);
 int				ft_buffnbr_signed(long long si, char *base, t_syntax s,
 		char *buff);
-int				ft_buffnbr_unsigned(unsigned long long si, char *base, t_syntax s,
-		char *buff);
+int				ft_buffnbr_unsigned(unsigned long long si, char *base,
+		t_syntax s, char *buff);
 int				ft_printf(const char *format, ...);
 #endif
