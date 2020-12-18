@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2020/12/18 15:33:14 by tmatis           ###   ########.fr        #
+#    Updated: 2020/12/18 16:47:37 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ OBJS_LIBFT	= $(addprefix libft/, ${SRCS_LIBFT:.c=.o})
 OBJS_PRINTF = $(addprefix srcs/, ${SRCS_PRINTF:.c=.o})
 OBJS_TESTS 	= $(addprefix tests/, ${SRCS_TESTS:.c=.o})
 
-NORMINETTE_PATH = ~/.norminette/norminette.rb
+NORMINETTE_PATH = norminette
 
 NAME		= libftprintf.a
 
