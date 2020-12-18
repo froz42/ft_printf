@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2020/12/16 11:48:00 by tmatis           ###   ########.fr        #
+#    Updated: 2020/12/18 15:33:14 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,21 +42,21 @@ NORMINETTE_PATH = ~/.norminette/norminette.rb
 NAME		= libftprintf.a
 
 .c.o:
-			@echo "\033[0;36mCompiling: \033[0;33m" $< "\033[0m"
+			@echo Compiling: $<
 			@gcc -Wall -Wextra -Werror -c $< -o ${<:.c=.o}
 
 $(NAME):	${OBJS_LIBFT} ${OBJS_PRINTF}
-			@echo "\033[0;35m"Linking library..."\033[0m"
+			@echo Linking library...
 			@ar -rcs $@ ${OBJS_LIBFT} ${OBJS_PRINTF}
 
 all:		${NAME}
 
 clean:
-			@echo "\033[0;35m"CLeaning OBJS and tests..."\033[0m"
+			@echo CLeaning OBJS and tests...
 			@rm -f ${OBJS_LIBFT} ${OBJS_PRINTF} ${OBJS_TESTS} test
 
 fclean:		clean
-			@echo "\033[0;35m"CLeaning library..."\033[0m"
+			@echo CLeaning library...
 			@rm -f ${NAME}
 
 re:			fclean all
@@ -64,19 +64,19 @@ re:			fclean all
 bonus:		all
 
 test:		${NAME} ${OBJS_TESTS}
-			@echo "\033[0;36m"Compiling tests with "\033[0;33m"-fsanitize=address -fsanitize=undefined"\033[0m"
+			@echo Compiling tests with -fsanitize=address -fsanitize=undefined
 			@gcc -Wall -Wextra -Werror -fsanitize=address -fsanitize=undefined -o ./test ${OBJS_TESTS} -L. -lftprintf
 
 run_test:	test
-			@echo "\033[0;32mRunning tests..\033[0m"
+			@echo "Running tests.."
 			@sleep 2
 			@./test
-			@echo "\033[0;32mEverything ok ?\033[0m"
+			@echo "Everything ok ?"
 
 norminette:
-			@echo "\033[0;36m------------ NORMINETTE ------------"
+			@echo "------------ NORMINETTE ------------"
 			${NORMINETTE_PATH} $(addprefix srcs/,${SRCS_PRINTF}) $(addprefix tests/,${SRCS_TESTS}) $(addprefix libft/,${SRCS_LIBFT}) ./ft_printf.h ./srcs/ft_printf.h
-			@echo "-----------------------------------\033[0m"
+			@echo "-----------------------------------"
 
 
 .PHONY:		all clean fclean re run_test norminette bonus
