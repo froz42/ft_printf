@@ -6,13 +6,13 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 14:36:22 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/13 17:37:13 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 17:03:42 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_doconversion(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_doconversion(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	int		result;
 
@@ -32,7 +32,7 @@ int		ft_doconversion(t_syntax syntax, t_buffer *buffer, va_list va)
 	return (result);
 }
 
-int		ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	t_buffer	buffer;
 	va_list		va;

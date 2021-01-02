@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2020/12/18 16:47:37 by tmatis           ###   ########.fr        #
+#    Updated: 2021/01/02 17:02:18 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ NAME		= libftprintf.a
 
 .c.o:
 			@echo Compiling: $<
-			@gcc -Wall -Wextra -Werror -c $< -o ${<:.c=.o}
+			@clang -Wall -Wextra -Werror -c $< -o ${<:.c=.o}
 
 $(NAME):	${OBJS_LIBFT} ${OBJS_PRINTF}
 			@echo Linking library...
@@ -65,7 +65,7 @@ bonus:		all
 
 test:		${NAME} ${OBJS_TESTS}
 			@echo Compiling tests with -fsanitize=address -fsanitize=undefined
-			@gcc -Wall -Wextra -Werror -fsanitize=address -fsanitize=undefined -o ./test ${OBJS_TESTS} -L. -lftprintf
+			@clang -Wall -Wextra -Werror -fsanitize=address -fsanitize=undefined -o ./test ${OBJS_TESTS} -L. -lftprintf
 
 run_test:	test
 			@echo "Running tests.."

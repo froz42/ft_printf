@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:19:36 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/13 16:39:36 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 17:11:59 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 t_syntax	ft_parseflags(const char **format, t_syntax syntax)
 {
-	const	char	*charset = "-+ 0#";
+	char	*charset;
 
+	charset = "-+ 0#";
 	while (ft_christr(charset, **format) != -1)
 	{
 		if (**format == '-')
@@ -110,8 +111,9 @@ t_syntax	ft_parselength(const char **format, t_syntax syntax)
 
 t_syntax	ft_parsetype(const char **format, t_syntax syntax)
 {
-	const	char	*charset = "cspdiuxX%n";
+	char	*charset;
 
+	charset = "cspdiuxX%n";
 	syntax.type = ft_christr(charset, **format);
 	if (**format && syntax.type != -1)
 		(*format)++;

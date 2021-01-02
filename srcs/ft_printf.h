@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/02 17:01:36 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 17:03:05 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int				ft_int_h(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_int_l(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_int_ll(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_uint_conv(t_syntax s, t_buffer *buff, unsigned long long i);
-int				ft_uhex_conv(t_syntax s, t_buff *buf, ULL i, t_bool upp);
+int				ft_uhex_conv(t_syntax s, t_buffer *buf, ULL i, t_bool upp);
 int				ft_uint_def(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_uint_hh(t_syntax syntax, t_buffer *buffer, va_list va);
 int				ft_uint_h(t_syntax syntax, t_buffer *buffer, va_list va);
