@@ -6,18 +6,19 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 17:49:54 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/26 19:44:58 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 18:19:42 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_test.h"
 #include <stdarg.h>
 
-void		ft_test_parseflags(void)
+void	ft_test_parseflags(void)
 {
 	t_syntax		s;
-	const	char	*format = "#+worked";
+	char			*format;
 
+	format = "#+worked";
 	s = ft_syntaxinit();
 	ft_assert_cmp(s.precision, -1, "We check that the precision is set to -1");
 	s = ft_parseflags((const char **)&format, s);
@@ -41,7 +42,7 @@ t_syntax	ft_parse_util(const char *format, t_bool assert_end, ...)
 	return (syntax);
 }
 
-void		ft_test_commoncase(void)
+void	ft_test_commoncase(void)
 {
 	t_syntax		syntax;
 
@@ -67,7 +68,7 @@ void		ft_test_commoncase(void)
 	ft_assert_cmp(syntax.precision, 0, "should be zero if no atoi");
 }
 
-void		ft_test_parseexep(void)
+void	ft_test_parseexep(void)
 {
 	t_syntax		syntax;
 
@@ -82,7 +83,7 @@ void		ft_test_parseexep(void)
 	ft_assert_cmp(syntax.precision, -1, "precision should -1");
 }
 
-void		ft_test_syntax(void)
+void	ft_test_syntax(void)
 {
 	ft_test_parseflags();
 	ft_test_commoncase();

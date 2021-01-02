@@ -6,33 +6,33 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 16:42:08 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/08 23:46:54 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 17:30:18 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_int_def(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_int_def(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	return (ft_int_conv(syntax, buffer, va_arg(va, int)));
 }
 
-int		ft_int_hh(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_int_hh(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	return (ft_int_conv(syntax, buffer, (char)va_arg(va, int)));
 }
 
-int		ft_int_h(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_int_h(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	return (ft_int_conv(syntax, buffer, (short)va_arg(va, int)));
 }
 
-int		ft_int_l(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_int_l(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	return (ft_int_conv(syntax, buffer, va_arg(va, long)));
 }
 
-int		ft_int_ll(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_int_ll(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	return (ft_int_conv(syntax, buffer, va_arg(va, long long)));
 }

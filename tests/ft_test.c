@@ -6,13 +6,13 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 17:52:58 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/13 18:20:27 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 18:19:53 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_test.h"
 
-int			ft_printf_no_flush(const char *format, t_buffer *buffer, ...)
+int	ft_printf_no_flush(const char *format, t_buffer *buffer, ...)
 {
 	va_list		va;
 	int			count;
@@ -34,12 +34,12 @@ int			ft_printf_no_flush(const char *format, t_buffer *buffer, ...)
 	return (count);
 }
 
-void		ft_flush_nowrite(t_buffer *buffer)
+void	ft_flush_nowrite(t_buffer *buffer)
 {
 	buffer->size = 0;
 }
 
-void		ft_testprintf_basic(void)
+void	ft_testprintf_basic(void)
 {
 	t_buffer	buffer;
 	int			result;
@@ -49,7 +49,7 @@ void		ft_testprintf_basic(void)
 	ft_assert_cmp(result, 0, "Empty string should return 0");
 }
 
-int			main(void)
+int	main(void)
 {
 	ft_putstr_fd("---   [BEGIN TEST BUFFER]   ---\n\n", 1);
 	ft_test_buffer();

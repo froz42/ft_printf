@@ -6,19 +6,21 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 13:16:03 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/13 16:49:07 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 17:29:45 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int					ft_str_def(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_str_def(t_syntax syntax, t_buffer *buffer, va_list va)
 {
-	const	char	pretends[2] = " 0";
-	const	char	*nullstr = "(null)";
+	char			*pretends;
+	char			*nullstr;
 	char			*str;
 	int				strlen;
 
+	pretends = " 0";
+	nullstr = " 0";
 	str = va_arg(va, char *);
 	if (!str)
 		str = (char *)nullstr;
@@ -37,7 +39,7 @@ int					ft_str_def(t_syntax syntax, t_buffer *buffer, va_list va)
 		return (strlen);
 }
 
-static	int			ft_wstrlenp(const int *wstr, int precision)
+static	int	ft_wstrlenp(const int *wstr, int precision)
 {
 	char	buff[4];
 	int		strlen;
@@ -54,8 +56,7 @@ static	int			ft_wstrlenp(const int *wstr, int precision)
 	return (strlen);
 }
 
-static	void		ft_buffwcat(t_buffer *buffer, const int *wstr,
-		int precision)
+static	void	ft_buffwcat(t_buffer *buffer, const int *wstr, int prec)
 {
 	char	buff[4];
 	int		buffed;
@@ -65,23 +66,26 @@ static	void		ft_buffwcat(t_buffer *buffer, const int *wstr,
 	while (*wstr)
 	{
 		buffed = ft_utf8_encode(*wstr++, buff);
-		if (precision != -1 && (strlen + buffed) > precision)
+		if (prec != -1 && (strlen + buffed) > prec)
 			return ;
 		strlen += buffed;
-		if (&buffer->content[buffer->size + buffed] >=
-				&buffer->content[BUFFER_SIZE])
+		if (&buffer->content[buffer->size + buffed]
+			>= &buffer->content[BUFFER_SIZE])
 			ft_buffflush(buffer);
 		ft_buffcat(buffer, buff, buffed);
 	}
 }
 
-int					ft_str_l(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_str_l(t_syntax syntax, t_buffer *buffer, va_list va)
 {
-	const	char	pretends[2] = " 0";
-	const	int		*nullstr = L"(null)";
-	const	int		*wstr = va_arg(va, int *);
-	int				strlen;
+	char	*pretends;
+	int		*nullstr;
+	int		*wstr;
+	int		strlen;
 
+	pretends = " 0";
+	nullstr = L"(null)";
+	wstr = va_arg(va, int *);
 	if (!wstr)
 		wstr = nullstr;
 	strlen = ft_wstrlenp(wstr, syntax.precision);

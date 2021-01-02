@@ -6,15 +6,14 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 16:22:56 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/13 18:18:18 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 17:35:57 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-static	int						ft_numlen_base(unsigned long long i, int base,
-		int precision)
+static	int	ft_numlen_base(unsigned long long i, int base, int precision)
 {
 	int		len;
 
@@ -29,8 +28,7 @@ static	int						ft_numlen_base(unsigned long long i, int base,
 	return (len);
 }
 
-static unsigned	long	long	ft_signhandle(long long si, char **buff,
-		t_syntax s)
+static ULL	ft_signhandle(long long si, char **buff, t_syntax s)
 {
 	if (si < 0)
 	{
@@ -44,10 +42,9 @@ static unsigned	long	long	ft_signhandle(long long si, char **buff,
 	return (si);
 }
 
-static	void					ft_beginhandle(char **buff, t_syntax s,
-		int base_len, long long nbr)
+static	void	ft_beginhandle(char **buff, t_syntax s, int bl, long long nbr)
 {
-	if ((s.hash && base_len == 16 && nbr) || s.type == 2)
+	if ((s.hash && bl == 16 && nbr) || s.type == 2)
 	{
 		if (s.type == 7)
 			ft_memcpy(*buff, "0X", 2);
@@ -57,13 +54,13 @@ static	void					ft_beginhandle(char **buff, t_syntax s,
 	}
 }
 
-int								ft_buffnbr_unsigned(unsigned long long i,
-		char *base, t_syntax s, char *buff)
+int	ft_buffnbr_unsigned(ULL i, char *base, t_syntax s, char *buff)
 {
-	const	int			base_len = ft_strlen(base);
-	int					num_len;
-	char				*temp;
+	int		base_len;
+	int		num_len;
+	char	*temp;
 
+	base_len = ft_strlen(base);
 	temp = buff;
 	ft_beginhandle(&buff, s, base_len, i);
 	num_len = ft_numlen_base(i, base_len, s.precision);
@@ -78,14 +75,14 @@ int								ft_buffnbr_unsigned(unsigned long long i,
 	return (ft_strlen(temp));
 }
 
-int								ft_buffnbr_signed(long long si, char *base,
-		t_syntax s, char *buff)
+int	ft_buffnbr_signed(long long si, char *base, t_syntax s, char *buff)
 {
-	const	int			base_len = ft_strlen(base);
-	int					num_len;
-	char				*temp;
-	unsigned long long	i;
+	int		base_len;
+	int		num_len;
+	char	*temp;
+	ULL		i;
 
+	base_len = ft_strlen(base);
 	temp = buff;
 	i = ft_signhandle(si, &buff, s);
 	num_len = ft_numlen_base(i, base_len, s.precision);

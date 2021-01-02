@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 16:05:06 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/09 17:38:11 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 18:16:09 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static	void	ft_test_uint(void)
 	ft_flush_nowrite(&buffer);
 }
 
-void			ft_test_int(void)
+void	ft_test_int(void)
 {
 	int			result;
 	t_buffer	buffer;

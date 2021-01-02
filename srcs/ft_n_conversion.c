@@ -6,13 +6,13 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:37:39 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/13 18:05:48 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 18:08:48 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_n_def(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_n_def(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	int	*p;
 
@@ -22,7 +22,7 @@ int		ft_n_def(t_syntax syntax, t_buffer *buffer, va_list va)
 	return (0);
 }
 
-int		ft_n_hh(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_n_hh(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	char	*p;
 
@@ -32,7 +32,7 @@ int		ft_n_hh(t_syntax syntax, t_buffer *buffer, va_list va)
 	return (0);
 }
 
-int		ft_n_h(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_n_h(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	short	*p;
 
@@ -42,7 +42,7 @@ int		ft_n_h(t_syntax syntax, t_buffer *buffer, va_list va)
 	return (0);
 }
 
-int		ft_n_l(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_n_l(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	long	*p;
 
@@ -52,9 +52,9 @@ int		ft_n_l(t_syntax syntax, t_buffer *buffer, va_list va)
 	return (0);
 }
 
-int		ft_n_ll(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_n_ll(t_syntax syntax, t_buffer *buffer, va_list va)
 {
-	long	long	*p;
+	long long	*p;
 
 	(void)buffer;
 	p = va_arg(va, long long *);

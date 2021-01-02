@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 19:16:04 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/02 17:03:05 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 17:48:21 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdarg.h>
 # define BUFFER_SIZE 2048
 # define ULL unsigned long long
+# define LL long long
 
 typedef enum e_length
 {

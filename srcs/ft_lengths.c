@@ -6,13 +6,13 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:52:43 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/13 17:56:05 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 17:19:35 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			ft_def_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_def_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	int	((*conv[13])(t_syntax syntax, t_buffer *buffer, va_list va));
 
@@ -29,7 +29,7 @@ int			ft_def_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
 	return (conv[syntax.type](syntax, buffer, va));
 }
 
-int			ft_l_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_l_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	int	((*conv[13])(t_syntax syntax, t_buffer *buffer, va_list va));
 
@@ -46,7 +46,7 @@ int			ft_l_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
 	return (conv[syntax.type](syntax, buffer, va));
 }
 
-int			ft_ll_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_ll_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	int	((*conv[13])(t_syntax syntax, t_buffer *buffer, va_list va));
 
@@ -63,7 +63,7 @@ int			ft_ll_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
 	return (conv[syntax.type](syntax, buffer, va));
 }
 
-int			ft_h_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_h_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	int	((*conv[13])(t_syntax syntax, t_buffer *buffer, va_list va));
 
@@ -80,7 +80,7 @@ int			ft_h_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
 	return (conv[syntax.type](syntax, buffer, va));
 }
 
-int			ft_hh_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
+int	ft_hh_conversion(t_syntax syntax, t_buffer *buffer, va_list va)
 {
 	int	((*conv[13])(t_syntax syntax, t_buffer *buffer, va_list va));
 
