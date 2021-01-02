@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 12:05:34 by tmatis            #+#    #+#             */
-/*   Updated: 2020/10/26 13:03:02 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/31 14:23:52 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned	int	un;
+	unsigned int	un;
 
 	if (n < 0)
 	{

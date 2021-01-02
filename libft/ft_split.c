@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 12:47:33 by tmatis            #+#    #+#             */
-/*   Updated: 2020/10/28 14:11:04 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/31 14:26:36 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ static	size_t	ft_wordlen(char const *s, char c)
 	return (i);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**dest;
 	size_t	i;
 
 	if (!s)
 		return (NULL);
-	dest = (char **)malloc((ft_wordcount(s, c) + 1) * sizeof(char *));
+	dest = (char **)malloc((ft_wordcount(s, c) + 1) *sizeof(char *));
 	if (!dest)
 		return (NULL);
 	i = 0;

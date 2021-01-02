@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 15:32:24 by tmatis            #+#    #+#             */
-/*   Updated: 2020/10/17 15:38:21 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/31 14:22:26 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned	char	*sc;
+	unsigned char	*sc;
 
 	sc = (unsigned char *)s;
 	while (n--)

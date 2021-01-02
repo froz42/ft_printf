@@ -6,17 +6,17 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 15:55:07 by tmatis            #+#    #+#             */
-/*   Updated: 2020/11/16 20:25:50 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/31 14:23:14 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	unsigned	*cs1;
-	char	unsigned	*cs2;
+	char unsigned	*cs1;
+	char unsigned	*cs2;
 
 	if (!n)
 		return (0);

@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2020/12/04 14:25:40 by tmatis           ###   ########.fr        #
+#    Updated: 2021/01/02 16:37:39 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJS		= ${SRCS:.c=.o}
 NAME		= libft.a
 
 .c.o:
-			gcc -Wall -Wextra -Werror -c $< -o ${<:.c=.o}
+			clang -Wall -Wextra -Werror -c $< -o ${<:.c=.o}
 
 $(NAME):	${OBJS}
 			ar -rcs $@ $^

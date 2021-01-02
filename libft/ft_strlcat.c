@@ -6,27 +6,19 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 19:45:40 by tmatis            #+#    #+#             */
-/*   Updated: 2020/10/29 18:16:52 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 16:16:28 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	ft_strnlen_s(const char *s, size_t maxlen)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
+	size_t	srclen;
+	size_t	dstlen;
 
-	i = 0;
-	while (s[i] && i < maxlen)
-		i++;
-	return (i);
-}
-
-size_t			ft_strlcat(char *dst, const char *src, size_t dstsize)
-{
-	const	size_t	srclen = ft_strlen(src);
-	const	size_t	dstlen = ft_strnlen_s(dst, dstsize);
-
+	srclen = ft_strlen(src);
+	dstlen = ft_strnlen(dst, dstsize);
 	if (dstlen == dstsize)
 		return (dstsize + srclen);
 	if (srclen < dstsize - dstlen)

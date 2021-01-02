@@ -6,13 +6,13 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 18:18:17 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/02 20:17:04 by tmatis           ###   ########.fr       */
+/*   Updated: 2020/12/29 20:58:04 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_assert(int actual, char *behavior)
+int	ft_assert(int actual, char *behavior)
 {
 	ft_putstr_fd("\033[0mTEST:", 1);
 	if (actual)
@@ -26,7 +26,7 @@ int				ft_assert(int actual, char *behavior)
 	return (actual);
 }
 
-int				ft_assert_cmp(int actual, int expected, char *behavior)
+int	ft_assert_cmp(int actual, int expected, char *behavior)
 {
 	ft_putstr_fd("\033[0mTEST:", 1);
 	if (actual == expected)
@@ -59,7 +59,7 @@ static	void	ft_putstrun(char *str, int pos)
 	}
 }
 
-int				ft_assert_strcmp(char *actual, char *expected, char *behavior)
+int	ft_assert_strcmp(char *actual, char *expected, char *behavior)
 {
 	size_t	i;
 

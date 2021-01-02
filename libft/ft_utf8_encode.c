@@ -6,11 +6,16 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 19:20:27 by tmatis            #+#    #+#             */
-/*   Updated: 2020/12/02 23:02:20 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/02 16:20:59 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_utf8_encode(int c, char *buff)
+/*
+ * This function transform codepoint c to 1-4 char.
+ * return the number of generated char
+*/
+
+int	ft_utf8_encode(int c, char *buff)
 {
 	int		i;
 
