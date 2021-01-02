@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2021/01/02 17:02:18 by tmatis           ###   ########.fr        #
+#    Updated: 2021/01/02 20:26:31 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,8 +75,7 @@ run_test:	test
 
 norminette:
 			@echo "------------ NORMINETTE ------------"
-			${NORMINETTE_PATH} $(addprefix srcs/,${SRCS_PRINTF}) $(addprefix tests/,${SRCS_TESTS}) $(addprefix libft/,${SRCS_LIBFT}) ./ft_printf.h ./srcs/ft_printf.h
+			${NORMINETTE_PATH}
 			@echo "-----------------------------------"
-
 
 .PHONY:		all clean fclean re run_test norminette bonus
