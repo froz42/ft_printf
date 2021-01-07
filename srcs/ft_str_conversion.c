@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 13:16:03 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/02 17:29:45 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/07 21:49:16 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_str_def(t_syntax syntax, t_buffer *buffer, va_list va)
 	int				strlen;
 
 	pretends = " 0";
-	nullstr = " 0";
+	nullstr = "(null)";
 	str = va_arg(va, char *);
 	if (!str)
 		str = (char *)nullstr;

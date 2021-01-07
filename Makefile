@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2021/01/07 21:43:10 by tmatis           ###   ########.fr        #
+#    Updated: 2021/01/07 21:47:45 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ $(NAME):	${OBJS_ASSERT} ${OBJS_CHAR} ${OBJS_LST} ${OBJS_MEMORY} \
 			${OBJS_MISC} ${OBJS_PUT} ${OBJS_STRING} ${OBJS_WSTRING} \
 			${OBJS_PRINTF}
 			@echo Linking library...
-			@ar -rcs $@ ${OBJS_LIBFT} ${OBJS_PRINTF}
+			@ar -rcs  $@ $^
 
 all:		${NAME}
 
