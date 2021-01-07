@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_wstr_strlen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 16:43:44 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/04 16:45:20 by tmatis           ###   ########.fr       */
+/*   Created: 2020/12/04 14:23:21 by tmatis            #+#    #+#             */
+/*   Updated: 2021/01/04 16:30:15 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "wstring.h"
+#include "../char/char.h"
 
-# define LIBFT_H
+int	ft_wstr_strlen(int *wstr)
+{
+	char	buff[4];
+	int		strlen;
+	int		buffed;
 
-# include "assert/assert.h"
-# include "char/char.h"
-# include "lst/lst.h"
-# include "memory/memory.h"
-# include "misc/misc.h"
-# include "string/string.h"
-# include "wstring/wstring.h"
-# include "put/put.h"
-
-#endif
+	strlen = 0;
+	while (*wstr)
+	{
+		buffed = ft_utf8_encode(*wstr++, buff);
+		strlen += buffed;
+	}
+	return (strlen);
+}

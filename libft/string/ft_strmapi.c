@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 16:43:44 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/04 16:45:20 by tmatis           ###   ########.fr       */
+/*   Created: 2020/10/26 11:30:01 by tmatis            #+#    #+#             */
+/*   Updated: 2020/10/28 14:12:26 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "string.h"
+#include <stdlib.h>
 
-# define LIBFT_H
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char	*dest;
+	size_t	i;
 
-# include "assert/assert.h"
-# include "char/char.h"
-# include "lst/lst.h"
-# include "memory/memory.h"
-# include "misc/misc.h"
-# include "string/string.h"
-# include "wstring/wstring.h"
-# include "put/put.h"
-
-#endif
+	if (!s || !f)
+		return (NULL);
+	dest = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!dest)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		dest[i] = f(i, s[i]);
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}

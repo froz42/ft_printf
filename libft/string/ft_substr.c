@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 16:43:44 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/04 16:45:20 by tmatis           ###   ########.fr       */
+/*   Created: 2020/10/20 21:24:51 by tmatis            #+#    #+#             */
+/*   Updated: 2021/01/04 16:30:53 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "string.h"
+#include <stdlib.h>
 
-# define LIBFT_H
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*dest;
 
-# include "assert/assert.h"
-# include "char/char.h"
-# include "lst/lst.h"
-# include "memory/memory.h"
-# include "misc/misc.h"
-# include "string/string.h"
-# include "wstring/wstring.h"
-# include "put/put.h"
-
-#endif
+	if (!s)
+		return (NULL);
+	while (*s && start--)
+		s++;
+	dest = malloc((ft_strnlen(s, len) + 1) * sizeof(char));
+	if (!dest)
+		return (NULL);
+	ft_strncpy(dest, s, len);
+	dest[len] = '\0';
+	return (dest);
+}

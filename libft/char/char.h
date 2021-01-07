@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   char.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 16:43:44 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/04 16:45:20 by tmatis           ###   ########.fr       */
+/*   Created: 2021/01/04 15:09:20 by tmatis            #+#    #+#             */
+/*   Updated: 2021/01/04 15:13:17 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#ifndef CHAR_H
 
-# define LIBFT_H
+# define CHAR_H
 
-# include "assert/assert.h"
-# include "char/char.h"
-# include "lst/lst.h"
-# include "memory/memory.h"
-# include "misc/misc.h"
-# include "string/string.h"
-# include "wstring/wstring.h"
-# include "put/put.h"
+int	ft_isalnum(int c);
+int	ft_isalpha(int c);
+int	ft_isascii(int c);
+int	ft_isdigit(int c);
+int	ft_islower(int c);
+int	ft_isprint(int c);
+int	ft_isupper(int c);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
+int	ft_utf8_encode(int c, char *buff);
 
 #endif

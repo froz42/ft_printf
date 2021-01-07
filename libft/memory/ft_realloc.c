@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 16:43:44 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/04 16:45:20 by tmatis           ###   ########.fr       */
+/*   Created: 2020/12/04 12:09:06 by tmatis            #+#    #+#             */
+/*   Updated: 2021/01/07 21:27:09 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "memory.h"
+#include <stdlib.h>
 
-# define LIBFT_H
+void	*ft_realloc(void *src, size_t size, size_t addbyte)
+{
+	char	*csrc;
+	char	*cdest;
 
-# include "assert/assert.h"
-# include "char/char.h"
-# include "lst/lst.h"
-# include "memory/memory.h"
-# include "misc/misc.h"
-# include "string/string.h"
-# include "wstring/wstring.h"
-# include "put/put.h"
-
-#endif
+	csrc = (char *)src;
+	cdest = (char *)malloc((size + addbyte) * sizeof(char));
+	ft_memcpy(cdest, csrc, size);
+	free(src);
+	return ((void *)cdest);
+}

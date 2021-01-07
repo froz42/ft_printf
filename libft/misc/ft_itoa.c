@@ -6,11 +6,11 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 14:41:20 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/07 21:24:46 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/07 21:26:05 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "misc.h"
 #include <stdlib.h>
 
 static	int	ft_len(int n)

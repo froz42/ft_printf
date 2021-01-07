@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 16:43:44 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/04 16:45:20 by tmatis           ###   ########.fr       */
+/*   Created: 2020/10/12 22:53:10 by tmatis            #+#    #+#             */
+/*   Updated: 2021/01/04 16:32:03 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "string.h"
 
-# define LIBFT_H
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	nlen;
 
-# include "assert/assert.h"
-# include "char/char.h"
-# include "lst/lst.h"
-# include "memory/memory.h"
-# include "misc/misc.h"
-# include "string/string.h"
-# include "wstring/wstring.h"
-# include "put/put.h"
-
-#endif
+	nlen = ft_strlen(needle);
+	if (nlen == 0)
+		return ((char *)haystack);
+	while (*haystack && ft_strncmp(haystack, needle, nlen) != 0 && len > nlen)
+	{
+		haystack++;
+		len--;
+	}
+	if (ft_strncmp(haystack, needle, nlen) == 0)
+		return ((char *)haystack);
+	return (NULL);
+}

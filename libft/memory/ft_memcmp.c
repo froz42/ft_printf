@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 16:43:44 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/04 16:45:20 by tmatis           ###   ########.fr       */
+/*   Created: 2020/10/17 15:55:07 by tmatis            #+#    #+#             */
+/*   Updated: 2021/01/04 16:37:37 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "string.h"
 
-# define LIBFT_H
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	char unsigned	*cs1;
+	char unsigned	*cs2;
 
-# include "assert/assert.h"
-# include "char/char.h"
-# include "lst/lst.h"
-# include "memory/memory.h"
-# include "misc/misc.h"
-# include "string/string.h"
-# include "wstring/wstring.h"
-# include "put/put.h"
-
-#endif
+	if (!n)
+		return (0);
+	cs1 = (unsigned char *)s1;
+	cs2 = (unsigned char *)s2;
+	while (--n && *cs1 == *cs2)
+	{
+		cs1++;
+		cs2++;
+	}
+	return (*cs1 - *cs2);
+}

@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 16:43:44 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/04 16:45:20 by tmatis           ###   ########.fr       */
+/*   Created: 2020/10/16 18:55:10 by tmatis            #+#    #+#             */
+/*   Updated: 2021/01/04 15:47:24 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "memory.h"
 
-# define LIBFT_H
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	char	*cdst;
+	char	*csrc;
 
-# include "assert/assert.h"
-# include "char/char.h"
-# include "lst/lst.h"
-# include "memory/memory.h"
-# include "misc/misc.h"
-# include "string/string.h"
-# include "wstring/wstring.h"
-# include "put/put.h"
-
-#endif
+	cdst = (char *)dst;
+	csrc = (char *)src;
+	if (csrc < cdst)
+	{
+		csrc += len;
+		cdst += len;
+		while (len--)
+			*--cdst = *--csrc;
+	}
+	else if (csrc != cdst)
+		ft_memcpy(cdst, csrc, len);
+	return (dst);
+}
