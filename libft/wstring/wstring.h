@@ -6,14 +6,15 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:22:08 by tmatis            #+#    #+#             */
-/*   Updated: 2021/01/07 21:28:20 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/01/08 21:19:32 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WSTRING_H
 
-# define WSTRING_H
 # include <string.h>
+
+# define WSTRING_H
 
 int		ft_wstr_strlen(int *wstr);
 size_t	ft_wstrlen(int *wstr);
